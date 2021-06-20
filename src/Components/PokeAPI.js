@@ -7,9 +7,7 @@ async function getPokemon(name) {
 }
 
 const returnInfo = (name) => {
-  getPokemon(name).then((data) => {
-    return data;
-  });
+  getPokemon(name).then((data) => data);
 };
 
 export default returnInfo;

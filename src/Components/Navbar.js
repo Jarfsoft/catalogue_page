@@ -6,7 +6,7 @@ import './Navbar.css';
 const Navbar = () => (
   <main className="navbar">
     <div className="title">
-      <img src={logo} alt="Logo"/>
+      <img src={logo} alt="Logo" />
     </div>
     <div className="links">
       <p>Type filter: </p>
