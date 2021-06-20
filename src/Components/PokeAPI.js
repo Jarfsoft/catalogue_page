@@ -1,13 +1,8 @@
-async function getPokemon(name) {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`,
-    { mode: 'cors' });
-  const data = await response.json();
-
-  return data;
+function getPokemon(name, setInfo) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then((response) => response.json()).then((data) => {
+    console.log(data);
+    setInfo(data);
+  });
 }
 
-const returnInfo = (name) => {
-  getPokemon(name).then((data) => data);
-};
-
-export default returnInfo;
+export default getPokemon;

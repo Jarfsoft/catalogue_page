@@ -10,5 +10,6 @@
   margin: 0 8rem;
   border-radius: 15px;
   color: black;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }

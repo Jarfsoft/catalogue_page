@@ -22,8 +22,6 @@ const Navbar = () => (
         <option>Bug</option>
         <option>Fight</option>
         <option>Ghost</option>
-        <option>Fairy</option>
-        <option>Flying</option>
         <option>Normal</option>
       </select>
     </div>
