@@ -1,17 +1,10 @@
-import { React, useEffect, useState } from 'react';
+/* eslint-disable react/forbid-prop-types */
+import React from 'react';
 import PropTypes from 'prop-types';
-
-import getPokemon from './PokeAPI';
 
 import './Pokemon.css';
 
-function Pokemon(props) {
-  const [newInfo, setInfo] = useState();
-
-  useEffect(() => {
-    getPokemon(props.name, setInfo);
-  }, []);
-
+function Pokemon({ data }) {
   const capitalize = (s) => {
     if (typeof s !== 'string') return '';
     return s.charAt(0).toUpperCase() + s.slice(1);
@@ -19,14 +12,15 @@ function Pokemon(props) {
 
   return (
     <div className="poke-card">
-      <h1>{newInfo ? capitalize(newInfo.name) : ''}</h1>
-      <img src={newInfo ? newInfo.sprites.front_default : ''} alt="Pokemon sprite" />
+      <h1>{data ? capitalize(data.name) : ''}</h1>
+      <img src={data ? data.sprites.front_default : ''} alt="Pokemon sprite" />
     </div>
   );
 }
 
 Pokemon.propTypes = {
-  name: PropTypes.string.isRequired,
+  data: PropTypes.object.isRequired,
 };
 
 export default Pokemon;
+/* eslint-enable react/forbid-prop-types */
