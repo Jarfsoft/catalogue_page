@@ -6,10 +6,25 @@
 }
 
 .poke-grid {
-  background-color: white;
-  margin: 0 8rem;
-  border-radius: 15px;
   color: black;
   display: grid;
   grid-template-columns: auto auto auto;
+}
+
+.grid-buttons {
+  background-color: white;
+  padding: 4rem 0;
+  border-radius: 15px;
+  margin: 2rem ;
+}
+
+.grid-buttons button {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  margin: 0 15rem;
+  padding: 0.5rem;
+  background-color: rgb(169, 0, 0);
+  border: outset 2px rgb(128, 0, 0);
+  border-radius: 15px;
 }

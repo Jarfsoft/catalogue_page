@@ -1,35 +1,20 @@
-import getPokemon from '../pokeApi';
-
 const stateDefault = {
-  list: [],
-  iteration: 0,
+  list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 };
-
-const pushPokemon = (data) => {
-  stateDefault.list.push(data);
-};
-
-for (let i = 1; i <= 12; i += 1) {
-  getPokemon(i, pushPokemon);
-}
 
 const pokemons = (state = stateDefault, action) => {
-  const newState = { list: [], iteration: 0 };
-  let newIteration = state.iteration;
+  const newState = { list: [] };
   switch (action.type) {
     case 'NEXT':
-      newIteration += 1;
-      for (let i = 1 + newIteration * 12; i <= 12 + newIteration * 12; i += 1) {
-        newState.list.push(getPokemon(i));
-        newState.iteration = newIteration;
-      }
+      if (action.payload < 0 && !(state.list[0] > 0 && state.list[0] < 13)) {
+        newState.list = [...state.list.map((i) => i + action.payload)];
+      } else if (action.payload > 0 && !(state.list[12] > 886 && state.list[12] < 899)) {
+        newState.list = [...state.list.map((i) => i + action.payload)];
+      } else newState.list = state.list;
       return newState;
-    case 'PREVIOUS':
-      newIteration -= 1;
-      for (let i = 1 + newIteration * 12; i <= 12 + newIteration * 12; i += 1) {
-        newState.list.push(getPokemon(i));
-        newState.iteration = newIteration;
-      }
+    case 'CHANGE_FILTER':
+      if (action.payload !== '') newState.list = [...action.payload];
+      else newState.list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
       return newState;
     default:
       return state;

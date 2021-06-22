@@ -1,14 +1,20 @@
-/* eslint-disable react/forbid-prop-types */
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './Pokemon.css';
+import { getPokemon } from '../pokeApi';
 
-function Pokemon({ data }) {
+function Pokemon({ id }) {
   const capitalize = (s) => {
     if (typeof s !== 'string') return '';
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
+
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    getPokemon(id, setData);
+  }, []);
 
   return (
     <div className="poke-card">
@@ -19,8 +25,7 @@ function Pokemon({ data }) {
 }
 
 Pokemon.propTypes = {
-  data: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Pokemon;
-/* eslint-enable react/forbid-prop-types */
