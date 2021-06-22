@@ -8,13 +8,15 @@ import './Navbar.css';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const setInfo = (list) => {
-    dispatch(actions.filter(list));
+  const setInfo = (list, type) => {
+    const newState = { list, type };
+    dispatch(actions.filter(newState));
   };
 
   const onFilterChange = (type) => {
+    const newState = { list: [], type: '' };
     if (type !== '') getPokemons(1, type, setInfo);
-    else dispatch(actions.filter(type));
+    else dispatch(actions.filter(newState));
   };
   return (
     <main className="navbar">
@@ -33,7 +35,7 @@ const Navbar = () => {
           <option value="rock">Rock</option>
           <option value="ground">Ground</option>
           <option value="bug">Bug</option>
-          <option value="fight">Fight</option>
+          <option value="fighting">Fighting</option>
           <option value="ghost">Ghost</option>
           <option value="normal">Normal</option>
         </select>
