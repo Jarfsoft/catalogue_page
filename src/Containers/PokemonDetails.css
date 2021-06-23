@@ -1,0 +1,66 @@
+.poke-details {
+  background-color: #282c34;
+  padding: 2rem 5rem;
+}
+
+.poke-details-card {
+  background-color: white;
+  margin: 2rem auto;
+  border: solid 1px black;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 90%;
+  height: 27rem;
+  display: flex;
+}
+
+.profile {
+  text-align: center;
+  width: auto;
+  padding: 2rem;
+  margin: auto 1rem;
+  border: solid 1px black;
+  border-radius: 15px;
+}
+
+.item1 { grid-area: id; }
+.item2 { grid-area: type; }
+.item3 { grid-area: height; }
+.item4 { grid-area: weight; }
+.item5 { grid-area: abilities; }
+
+.details-data {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    'id type'
+    'height weight'
+    'abilities abilities'
+    'abilities abilities';
+  grid-template-rows: 4rem 4rem 8rem;
+  width: 100%;
+  margin: 3rem 2rem;
+}
+
+.details-data p {
+  height: 1rem;
+}
+
+.details-data b {
+  margin: 0 1rem;
+}
+
+.abilities {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.abilities ul {
+  display: grid;
+  grid-template-columns: repeat(4, 7rem);
+}
+
+.abilities li {
+  width: 6rem;
+  margin: 1rem;
+}

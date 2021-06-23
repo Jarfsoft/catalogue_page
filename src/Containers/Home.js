@@ -23,17 +23,21 @@ function Home() {
     dispatch(actions.filter(newState));
   };
   const nextClickHandler = () => {
-    if (continuous()) {
-      dispatch(actions.next(12));
-    } else {
-      getPokemons(list[11] + 1, sType, setInfo);
+    if (list.length === 12) {
+      if (continuous()) {
+        dispatch(actions.next(12));
+      } else {
+        getPokemons(list[11] + 1, sType, setInfo);
+      }
     }
   };
   const previousClickHandler = () => {
-    if (continuous()) {
-      dispatch(actions.next(-12));
-    } else {
-      getPokemons(1, sType, setInfo);
+    if (list.length === 12) {
+      if (continuous()) {
+        dispatch(actions.next(-12));
+      } else {
+        getPokemons(1, sType, setInfo);
+      }
     }
   };
   return (
