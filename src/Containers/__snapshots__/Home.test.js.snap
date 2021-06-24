@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page snapshot Home page is rendered 1`] = `
+<div
+  className="poke-section"
+>
+  <div
+    className="grid-buttons"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Previous
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Next
+    </button>
+    <div
+      className="poke-grid"
+    >
+      
+    </div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Previous
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar snapshot Navbar section is rendered 1`] = `
+<main
+  className="navbar"
+>
+  <div
+    className="title"
+  >
+    <img
+      alt="Logo"
+      src="pokemon.png"
+    />
+  </div>
+  <div
+    className="links"
+  >
+    <p>
+      Type filter: 
+    </p>
+    <select
+      id="typeFilter"
+      name="typeFilter"
+      onChange={[Function]}
+      required={true}
+    >
+      <option
+        value=""
+      >
+        All
+      </option>
+      <option
+        value="fire"
+      >
+        Fire
+      </option>
+      <option
+        value="water"
+      >
+        Water
+      </option>
+      <option
+        value="grass"
+      >
+        Grass
+      </option>
+      <option
+        value="electric"
+      >
+        Electric
+      </option>
+      <option
+        value="ice"
+      >
+        Ice
+      </option>
+      <option
+        value="rock"
+      >
+        Rock
+      </option>
+      <option
+        value="ground"
+      >
+        Ground
+      </option>
+      <option
+        value="bug"
+      >
+        Bug
+      </option>
+      <option
+        value="fighting"
+      >
+        Fighting
+      </option>
+      <option
+        value="ghost"
+      >
+        Ghost
+      </option>
+      <option
+        value="normal"
+      >
+        Normal
+      </option>
+    </select>
+  </div>
+</main>
+`;

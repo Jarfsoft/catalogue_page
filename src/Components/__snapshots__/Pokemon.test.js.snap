@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon snapshot Pokemon component is rendered 1`] = `
+<div
+  className="poke-card"
+>
+  <h1>
+    
+  </h1>
+  <img
+    alt="Pokemon sprite"
+    src=""
+  />
+  <a
+    href="/pokemon/1"
+    onClick={[Function]}
+  >
+    Details
+  </a>
+</div>
+`;

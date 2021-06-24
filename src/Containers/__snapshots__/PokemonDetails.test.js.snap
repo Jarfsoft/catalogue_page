@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonDetails snapshot PokemonDetails page is rendered 1`] = `
+<div
+  className="poke-details"
+>
+  <div
+    className="poke-details-card"
+  >
+    <div
+      className="profile"
+    >
+      <h1>
+        
+      </h1>
+      <img
+        alt="Pokemon sprite"
+        src=""
+      />
+    </div>
+    <div
+      className="details-data"
+    >
+      <p
+        className="item1"
+      >
+        <b>
+          ID:
+        </b>
+        
+      </p>
+      <p
+        className="item2"
+      >
+        <b>
+          Type:
+        </b>
+        
+      </p>
+      <p
+        className="item3"
+      >
+        <b>
+          Height:
+        </b>
+        
+      </p>
+      <p
+        className="item4"
+      >
+        <b>
+          Weight:
+        </b>
+        
+      </p>
+      <div
+        className="item5"
+      >
+        <b>
+          Abilities:
+        </b>
+        <br />
+        <div
+          className="abilities"
+        >
+          <ul>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Back
+    </a>
+  </div>
+</div>
+`;

@@ -3,10 +3,10 @@ import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
 // import userEvent from '@testing-library/user-event';
 // import { render, screen } from '@testing-library/react';
-import { Provider, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
-import Home from './Home';
+import PokemonDetails from './PokemonDetails';
 
 const initialState = {
   list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -19,23 +19,27 @@ jest.mock('react-redux', () => ({
     .mockReturnValueOnce(initialState),
 }));
 
-describe('Home page snapshot', () => {
-  afterEach(() => {
-    useSelector.mockClear();
-  });
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useParams: () => ({
+    id: 1,
+  }),
+}));
+
+describe('PokemonDetails snapshot', () => {
   const mockStore = configureStore();
   let store;
 
-  it('Home page is rendered', () => {
+  it('PokemonDetails page is rendered', () => {
     store = mockStore(initialState);
-    const home = renderer
+    const pokemondetails = renderer
       .create(
         <Provider store={store}>
           <BrowserRouter>
-            <Home />
+            <PokemonDetails />
           </BrowserRouter>
         </Provider>,
       ).toJSON();
-    expect(home).toMatchSnapshot();
+    expect(pokemondetails).toMatchSnapshot();
   });
 });

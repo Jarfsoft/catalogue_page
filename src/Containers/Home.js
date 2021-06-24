@@ -46,7 +46,7 @@ function Home() {
         <button onClick={previousClickHandler} type="button">Previous</button>
         <button onClick={nextClickHandler} type="button">Next</button>
         <div className="poke-grid">
-          {list.map((p) => <Pokemon key={p} id={p} />)}
+          {list ? list.map((p) => <Pokemon key={p} id={p} />) : ''}
         </div>
         <button onClick={previousClickHandler} type="button">Previous</button>
         <button onClick={nextClickHandler} type="button">Next</button>
