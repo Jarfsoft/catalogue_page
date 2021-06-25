@@ -2,7 +2,7 @@
 
 > Front-end app to browse in between some pokemon and see some of their details. There is a filter feature implemented to find them through their type.
 
-![screenshot]()
+![screenshot](./screenshot.png)
 
 ## Built
 
@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://jarfsoft-pokemon-catalogue.netlify.app/)
 
 
 ## Getting Started
