@@ -1,8 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-// import userEvent from '@testing-library/user-event';
-// import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
@@ -26,7 +25,7 @@ jest.mock('react-router-dom', () => ({
   }),
 }));
 
-describe('PokemonDetails snapshot', () => {
+describe('PokemonDetails container', () => {
   const mockStore = configureStore();
   let store;
 
@@ -41,5 +40,17 @@ describe('PokemonDetails snapshot', () => {
         </Provider>,
       ).toJSON();
     expect(pokemondetails).toMatchSnapshot();
+  });
+
+  it('should contain a image', () => {
+    const pokemondetails = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <PokemonDetails />
+        </BrowserRouter>
+      </Provider>
+    );
+    const image = pokemondetails.container.querySelectorAll('img');
+    expect(image).toHaveLength(1);
   });
 });

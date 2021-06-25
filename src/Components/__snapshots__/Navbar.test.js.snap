@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navbar snapshot Navbar section is rendered 1`] = `
+exports[`Navbar render Snapshot check should render Navbar section 1`] = `
 <main
   className="navbar"
 >

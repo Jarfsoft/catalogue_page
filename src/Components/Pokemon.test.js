@@ -1,14 +1,12 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-
-// import userEvent from '@testing-library/user-event';
-// import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { render } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom'; import Pokemon from './Pokemon';
 
-describe('Pokemon snapshot', () => {
+describe('Component render', () => {
   const initialState = {
     list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     type: '',
@@ -27,5 +25,18 @@ describe('Pokemon snapshot', () => {
         </BrowserRouter>,
       ).toJSON();
     expect(pokemon).toMatchSnapshot();
+  });
+
+  it('should containt an image', () => {
+    store = mockStore(initialState);
+    const pokemon = render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <Pokemon id={1} />
+        </Provider>
+      </BrowserRouter>
+    );
+    const img = pokemon.container.querySelectorAll('img');
+    expect(img).toHaveLength(1);
   });
 });

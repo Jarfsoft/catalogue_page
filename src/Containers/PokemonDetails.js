@@ -36,7 +36,7 @@ function PokemonDetails() {
           </p>
           <p className="item3">
             <b>Height:</b>
-            {data ? `${data.height} ft` : ''}
+            {data ? `${data.height} in` : ''}
           </p>
           <p className="item4">
             <b>Weight:</b>

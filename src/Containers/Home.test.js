@@ -1,9 +1,8 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
-// import userEvent from '@testing-library/user-event';
-// import { render, screen } from '@testing-library/react';
 import { Provider, useSelector } from 'react-redux';
+import { render } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import { BrowserRouter } from 'react-router-dom';
 import Home from './Home';
@@ -19,7 +18,7 @@ jest.mock('react-redux', () => ({
     .mockReturnValueOnce(initialState),
 }));
 
-describe('Home page snapshot', () => {
+describe('Home page render', () => {
   afterEach(() => {
     useSelector.mockClear();
   });
@@ -37,5 +36,13 @@ describe('Home page snapshot', () => {
         </Provider>,
       ).toJSON();
     expect(home).toMatchSnapshot();
+  });
+
+  describe('Home contains', () => {
+    it('should contain 4 buttons', () => {
+      const home = render(<Provider store={store}><Home /></Provider>);
+      const select = (home.container.querySelectorAll('button'));
+      expect(select).toHaveLength(4);
+    });
   });
 });

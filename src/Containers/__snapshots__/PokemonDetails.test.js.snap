@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PokemonDetails snapshot PokemonDetails page is rendered 1`] = `
+exports[`PokemonDetails container PokemonDetails page is rendered 1`] = `
 <div
   className="poke-details"
 >

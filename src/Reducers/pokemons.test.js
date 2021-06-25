@@ -20,6 +20,14 @@ const actionPrevious = {
   payload: -12,
 };
 
+const actionFilter = {
+  type: 'CHANGE_FILTER',
+  payload: {
+    list: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+    type: 'normal',
+  },
+};
+
 describe('Pokemons reducers', () => {
   it('Should return default state', () => {
     const newState = pokemons(undefined, {});
@@ -39,5 +47,13 @@ describe('Pokemons reducers', () => {
   it('Should return the actual state with no changes', () => {
     const newState = pokemons(state, actionPrevious);
     expect(newState).toEqual(state);
+  });
+
+  it('Sould return state with the same list and updated type attribute', () => {
+    const newState = pokemons(state, actionFilter);
+    expect(newState).toEqual({
+      list: [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+      type: 'normal',
+    });
   });
 });
