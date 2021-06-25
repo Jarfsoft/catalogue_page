@@ -48,7 +48,7 @@ describe('PokemonDetails container', () => {
         <BrowserRouter>
           <PokemonDetails />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
     const image = pokemondetails.container.querySelectorAll('img');
     expect(image).toHaveLength(1);

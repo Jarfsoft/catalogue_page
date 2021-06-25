@@ -34,7 +34,7 @@ describe('Component render', () => {
         <Provider store={store}>
           <Pokemon id={1} />
         </Provider>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     const img = pokemon.container.querySelectorAll('img');
     expect(img).toHaveLength(1);

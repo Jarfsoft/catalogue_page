@@ -27,7 +27,7 @@ describe('Navbar render', () => {
   describe('Navbar contains', () => {
     it('should contain a select menu', () => {
       const navbar = render(<Provider store={store}><Navbar /></Provider>);
-      const select =navbar.container.querySelector('select');
+      const select = navbar.container.querySelector('select');
       expect(select).toHaveLength(12);
     });
     it('should contain a image', () => {
